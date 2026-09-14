@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- prog + timer -->
+  <div class="quiz-header-ui">
+    <div class="progress-container">
+      <div class="progress-bar" id="quiz-progress"></div>
+    </div>
+    <div class="quiz-timer">Time: <span id="global-time">60</span>s</div>
+  </div>
+
+  <!-- scroll cont (scroll lock) -->
+  <main class="scroll-container scroll-locked">
+    
+    <!-- Page 1 -->
+    <section class="page" id="page1">
+      <div class="content">
+        <h1 class="glitch-text" data-text="QUESTION 01">QUESTION 01</h1>
+        <p class="question-prompt">is pocky goated?</p>
+        <div class="quiz-options">
+          <button class="quiz-btn" data-correct="false">no</button>
+          <button class="quiz-btn" data-correct="false">no</button>
+          <button class="quiz-btn" data-correct="true">yes</button>
+          <button class="quiz-btn" data-correct="false">no</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Page 2 last qn has data-speed="fast") -->
+    <section class="page" id="page2" data-speed="fast">
+      <div class="content">
+        <h1 class="glitch-text" data-text="QUESTION 02">QUESTION 02</h1>
+        <p class="question-prompt">does nyx smell?</p>
+        <div class="quiz-options">
+          <button class="quiz-btn" data-correct="true">like flowers and sunshine</button>
+          <button class="quiz-btn" data-correct="false">yes</button>
+          <button class="quiz-btn" data-correct="false">like poo</button>
+          <button class="quiz-btn" data-correct="false">no</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Page 3 -->
+    <section class="page" id="page3">
+      <div class="content">
+        <h1 class="glitch-text" data-text="THE END">TH▀▚▞𝄢⧉⪡E END</h1>
+        <p class="question-prompt">Your journey ends here.</p>
+        <div class="score-board">
+          <h2>Score: <span id="final-score">0</span></h2>
+          <button class="restart-btn" onclick="window.location.reload()">RETRY</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
