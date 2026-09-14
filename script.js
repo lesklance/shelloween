@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (timeLeft <= 0) {
       clearInterval(gameLoop);
       alert("Failed. Fools have no place here.");
-      window.location.href = "index.html"; 
+      window.location.href = "failure.html"; 
     }
   }, 20);
 
@@ -135,5 +135,17 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }, 1200);
     });
+  });
+});
+
+const pupils = document.querySelectorAll('.pupil');
+
+window.addEventListener('mousemove', (e) => {
+  pupils.forEach((pupil) => {
+    const rect = pupil.getBoundingClientRect();
+    const x = (e.clientX - (rect.left + rect.width / 2)) / 10;
+    const y = (e.clientY - (rect.top + rect.height / 2)) / 10;
+    
+    pupil.style.transform = `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`;
   });
 });
