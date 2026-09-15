@@ -138,14 +138,27 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-const pupils = document.querySelectorAll('.pupil');
+document.addEventListener('mousemove', (e) => {
+  const container = document.querySelector('.eyes-container');
+  const pupils = document.querySelector('.pupils-overlay');
+  
+  if (!container || !pupils) return;
 
-window.addEventListener('mousemove', (e) => {
-  pupils.forEach((pupil) => {
-    const rect = pupil.getBoundingClientRect();
-    const x = (e.clientX - (rect.left + rect.width / 2)) / 10;
-    const y = (e.clientY - (rect.top + rect.height / 2)) / 10;
-    
-    pupil.style.transform = `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`;
-  });
+  // find centre
+  const rect = container.getBoundingClientRect();
+  const centerX = rect.left + rect.width / 2;
+  const centerY = rect.top + rect.height / 2;
+  
+  // angle of cursor
+  const angle = Math.atan2(e.clientY - centerY, e.clientX - centerX);
+  
+  // max distance pupils can travel
+  const maxDistance = 30; 
+  
+  // calc movement coords
+  const moveX = Math.cos(angle) * maxDistance;
+  const moveY = Math.sin(angle) * maxDistance;
+  
+  // use coords to move pupil layer
+  pupils.style.transform = `translate(${moveX}px, ${moveY}px)`;
 });
