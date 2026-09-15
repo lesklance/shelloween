@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const gameLoop = setInterval(() => {
     // current page has fast, accelerate time drain
     if (activePage && activePage.getAttribute("data-speed") === "fast") {
-      timeLeft -= 0.15;
+      timeLeft -= 0.3;
     } else {
       timeLeft -= 0.02;
     }
@@ -138,6 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// eye tracking
 document.addEventListener('mousemove', (e) => {
   const container = document.querySelector('.eyes-container');
   const pupils = document.querySelector('.pupils-overlay');

@@ -34,6 +34,9 @@ body {
 #page1 { background-color: black; color: white;}
 #page2 { background-color: black; color: white;}
 #page3 { background-color: black; color: white;}
+#page4 { background-color: black; color: white;}
+#page5 { background-color: rgb(89, 5, 19); color: white;}
+#page6 { background-color: black; color: white;}
 
 /* setup for anim*/
 .content {
