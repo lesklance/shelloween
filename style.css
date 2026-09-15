@@ -191,10 +191,11 @@ body {
 
 body.failure-page {
   background: #49001b;
+  align-items: center;
 }
 .eyes-container {
   position: relative;
-  width: 1000px;
+  width: 2000px;
   aspect-ratio: 2 / 1;
   margin: 0 auto;
   overflow: hidden;
